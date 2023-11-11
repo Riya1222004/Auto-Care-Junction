@@ -1,0 +1,791 @@
+
+<!DOCTYPE html>
+<html dir="" lang="en" >
+<head>
+    <meta content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+	<meta name="csrf-token" content="JmOBTEv297HUeS3SMX3wmpkqCSrQ2xQq5mQOnl8v">
+
+	
+	<link rel="icon" href="http://localhost/php_practicle/garage/fevicol.png" type="image/gif" sizes="16x16">
+    <title>My Garage</title>
+	
+	
+    <!-- Bootstrap -->
+    <link href= "http://localhost/php_practicle/garage/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="http://localhost/php_practicle/garage/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="http://localhost/php_practicle/garage/vendors/nprogress/nprogress.css" rel="stylesheet">
+	 <!-- iCheck -->
+    <link href="http://localhost/php_practicle/garage/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <!-- <link href="http://localhost/php_practicle/garage/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet"> -->
+    <!-- Select2 -->
+    <link href="http://localhost/php_practicle/garage/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+   
+    
+	<!-- FullCalendar -->
+    <link href="http://localhost/php_practicle/garage/vendors/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+    <link href="http://localhost/php_practicle/garage/vendors/fullcalendar/dist/fullcalendar.print.css" rel="stylesheet" media="print">
+	<!-- bootstrap-daterangepicker -->
+    <link href="http://localhost/php_practicle/garage/vendors/bootstrap-daterangepicker/daterangepicker.css " rel="stylesheet">
+    <link href="http://localhost/php_practicle/garage/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+	<!-- dropify CSS -->
+	<link rel="stylesheet" href="http://localhost/php_practicle/garage/vendors/dropify/dist/css/dropify.min.css">
+	
+    <!-- Custom Theme Style -->
+    <link href="http://localhost/php_practicle/garage/build/css/custom.min.css " rel="stylesheet">
+	
+	 <!-- Own Theme Style -->
+    <link href="http://localhost/php_practicle/garage/build/css/own.css " rel="stylesheet">
+	
+
+	<!-- Our Custom stylesheet -->
+	<link rel="stylesheet" type="text/css" href="http://localhost/php_practicle/garage/public/css/responsive_styles.css">
+
+	<!-- MoT Custom stylesheet -->
+	<link rel="stylesheet" type="text/css" href=" http://localhost/php_practicle/garage/public/css/custom_mot_styles.css ">
+   <!-- Datatables -->
+    
+    <link href="http://localhost/php_practicle/garage/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+	<link href="http://localhost/php_practicle/garage/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+	 <link href="http://localhost/php_practicle/garage/build/css/dataTables.responsive.css " rel="stylesheet">
+	 <link href="http://localhost/php_practicle/garage/build/css/dataTables.tableTools.css " rel="stylesheet">
+    <!-- <link href="http://localhost/php_practicle/garage/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet"> -->
+    
+    <link href="http://localhost/php_practicle/garage/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+	
+	 <!-- AutoComplete CSS -->
+	<link href="http://localhost/php_practicle/garage/build/css/themessmoothness.css" rel="stylesheet">
+	 <!-- Multiselect CSS -->
+	<link href="http://localhost/php_practicle/garage/build/css/multiselect.css" rel="stylesheet">
+	 <!-- Slider Style -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
+	<link rel="stylesheet" type="text/css" href="http://localhost/php_practicle/garage/public/css/google_api_font.css">
+			
+		
+	<!-- sweetalert -->
+	<link href="http://localhost/php_practicle/garage/vendors/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+	
+	<!-- <link href="http://localhost/php_practicle/garage/build/dist/css/select2.min.css" rel='stylesheet' type='text/css'> -->
+	<style>
+	@media  print
+   {
+     
+      .noprint
+      {
+        display:none
+      }
+   }
+	</style>
+  </head>
+
+<body id="app-layout" class="nav-md">
+   <div class="container body">
+    <div class="main_container">
+       <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title hidden-xs" style="border: 0; ">
+	
+	
+					<div class="row">
+            <div class="col-lg-8 col-md-8 col-xs-12 col-sm-12">
+                <div class="x_panel cld">
+                  <div class="x_title">
+                    <h2>Calendar Events</h2>
+                    
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                    <div id="calendarevent"></div>
+
+                  </div>
+                </div>
+			</div>
+           
+            <div class="col-md-4 col-sm-12 col-xs-12">
+					<div class="x_panel rjc"> 
+						<div class="x_title">
+							
+		
+								<h2>Recently Joined Customer</h2>
+								<ul class="nav navbar-right panel_toolbox">
+									<li><a href="http://localhost/php_practicle/garage/customer/list"><button type="button" class="btn  btn-default">View All</button></a>
+									</li>
+								</ul>
+							<div class="clearfix"></div>
+						</div>
+						
+						<ul class="list-unstyled top_profiles scroll-view">
+												  <li class="media event">
+							<a class="userpic">
+							 <img src="http://localhost/php_practicle/garage/public/customer/avtar.png" style="width: 40px; height: 40px;margin-right: 18px;" class="img-circle" > 
+							</a>
+							<div class="media-body">
+							  <a class="title" href="customer/list/2"><strong>Riya&nbsp;Mehta</a> </strong>
+							  <p> reeya1202@gmail.com </p>
+							  </p>
+							</div>
+						  </li>
+						 						</ul>
+					</div>
+					<div class="x_panel tmm">
+						<div class="col-md-12 col-xs-12 col-sm-12">
+						<div class="x_title">
+							<h2 style="margin:0">Top Mechanics This Month</h2>
+							
+							<div class="clearfix"></div>
+						 </div>
+							
+							<div id="donutchartperformance" style="margin-top:15px;" dir="ltr"></div>
+						</div> 
+					</div>
+            </div> 
+        </div>
+
+    <!-- Monthly Service Summary -->
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+				<div class="x_panel mss">
+					<div class="x_title">
+						<h2 style="width:100%;">Monthly Service Summary - March-2022</h2>
+						<div class="clearfix"></div>
+					</div>
+					<div class="x_content">
+						<div class="row">
+							<div class="col-md-8 col-xs-12 col-sm-12">
+								<div id="barchart" dir="ltr" style="width:100%;padding:0px;margin:0">
+								</div>
+							</div>
+							<div class="col-md-4 col-xs-12 col-sm-12">
+								<div class="row" align="center" >
+									<div class="col-md-6 col-xs-12 col-sm-12">
+										<h4 class="onservicess">Ontime Service</h4>
+										<div id="donutchartontime"  dir="ltr" style="padding-bottom:15px;"></div>
+									</div>
+									<div class="col-md-6 col-xs-12 col-sm-12">
+									
+										<h4 style="margin:0">Top Five Serviced Vehicles</h4>
+										<div id="donutchart" dir="ltr"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!-- Free service details -->
+		<div class="row">
+			<div class="col-md-4 col-xs-12 col-sm-12">
+				<div class="x_panel freebuttom">
+					<div class="x_title">
+						<h2>Free Service Details</h2>
+						<ul class="nav navbar-right panel_toolbox">
+							<li>
+								<form method="get" action="jobcard/list">
+									<input type="hidden" name="free"  value="free"/>
+										<button type="submit"  class="btn  btn-default1 freeservice">View All</button>
+								</form>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+				  								   								</div>
+			</div>
+
+		 <!-- paid service --> 
+			<div class="col-md-4 col-xs-12 col-sm-12">
+				<div class="x_panel paidbuttom">
+					<div class="x_title">
+						<h2> Paid Service Details</h2>
+						<ul class="nav navbar-right panel_toolbox">
+					
+							<form method="get" action="jobcard/list">
+								<input type="hidden" name="paid"  value="paid"/>
+									<button type="submit"  class="btn  btn-default1 freeservice">View All	</button>
+							</form>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+				   					   									</div>
+			</div>
+
+		<!-- Repeat job service -->
+			<div class="col-md-4 col-xs-12 col-sm-12">
+				<div class="x_panel repeatbuttom">
+					<div class="x_title">
+						<h2>Repeat Job Service Details</h2>
+						<ul class="nav navbar-right panel_toolbox">
+							<form method="get" action="jobcard/list">
+								<input type="hidden" name="repeatjob"  value="repeat job"/>
+								<button type="submit"  class="btn  btn-default1 freeservice">View All</button>
+							</form>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+																				</div>
+			</div>
+		</div>
+			<!---end Active(login) in show admin,supportstaff,accountant-->
+
+    </div>
+	<div id="myModal-job" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header"> 
+					<a href=""><button type="button" class="close">&times;</button></a>
+					<h4 id="myLargeModalLabel" class="modal-title">Invoice</h4>
+				</div>
+				<div class="modal-body">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+ <script src="http://localhost/php_practicle/garage/vendors/jquery/dist/jquery.min.js"></script> 
+ <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" defer="defer"></script>
+ <script type="text/javascript" src="https://www.google.com/jsapi"></script> -->
+
+<!-- All Js file for Charts -->
+<script type="text/javascript" src="http://localhost/php_practicle/garage/public/js/loader.min.js"></script>
+<script type="text/javascript" src="http://localhost/php_practicle/garage/public/js/49/loader.js" defer="defer"></script>
+<script type="text/javascript" src="http://localhost/php_practicle/garage/public/js/49/jsapi_compiled_default_module.js" defer="defer"></script>
+<script type="text/javascript" src="http://localhost/php_practicle/garage/public/js/49/jsapi_compiled_graphics_module.js" defer="defer"></script>
+<script type="text/javascript" src="http://localhost/php_practicle/garage/public/js/49/jsapi_compiled_ui_module.js" defer="defer"></script>
+<script type="text/javascript" src="http://localhost/php_practicle/garage/public/js/49/jsapi_compiled_corechart_module.js" defer="defer"></script>
+
+ <!-- service event in calendarevent -->
+  <!-- Calendar Event in Dashboard-->
+ <script>
+	$(document).ready(function() {
+		$('#calendarevent').fullCalendar({
+		height: 620,
+		 header: {
+		left: 'prev,next today',
+		center: 'title',
+		right: 'month,agendaWeek,agendaDay'
+		},
+		defaultDate: new Date(),
+			navLinks: true, // can click day/week names to navigate views
+			editable: true,
+			eventLimit: true, // allow "more" link when too many events
+			editable: true,
+			toolkip:true,
+			events: "0",
+			eventMouseover: function (data, event, view) {
+			   tooltip = '<div class="col-md-12 col-sm-12 col-xs-12 tooltiptopicevent" style="width:auto;height:auto;background:black;color:#fff;position:absolute;z-index:10001;padding:10px 10px 10px 10px ;border-radius:5px;  line-height: 200%;">';
+			   // alert(data.vehicle);
+				if(data.title1 != '')
+					tooltip = tooltip + data.title1 ; 
+				if(data.dates != '')
+					tooltip = tooltip + ' | ' + data.dates + '</br>' + ' ';  
+				if(data.customer != '')
+					tooltip = tooltip  + data.customer;
+				if(data.plateno != '')
+					tooltip = tooltip + ' | ' + data.plateno;
+				if(data.vehicle != '')
+					tooltip = tooltip + ' | ' + data.vehicle;
+			
+				tooltip = tooltip + '</div>';
+			
+            $("body").append(tooltip);
+            $(this).mouseover(function (e) {
+                $(this).css('z-index', 10000);
+                $('.tooltiptopicevent').fadeIn('500');
+                $('.tooltiptopicevent').fadeTo('10', 1.9);
+            }).mousemove(function (e) {
+                $('.tooltiptopicevent').css('top', e.pageY + 10);
+                $('.tooltiptopicevent').css('left', e.pageX + 20);
+            });
+			},
+			eventMouseout: function (data, event, view) {
+				$(this).css('z-index', 8);
+				$('.tooltiptopicevent').remove();
+			},
+			dayClick: function () {
+				tooltip.hide()
+			},
+			eventResizeStart: function () {
+				tooltip.hide()
+			},
+			eventDragStart: function () {
+				tooltip.hide()
+			},
+			viewDisplay: function () {
+				tooltip.hide()
+			},
+			
+			eventClick: function(event) {
+				if (event.url) {
+					window.location(event.url);
+				}
+				if (event.url1)
+				{
+					$('#myModal-job').modal();
+
+					$('.modal-body').html("");
+					
+					var serviceid = (event.s_id);					
+									
+											
+					var url = (event.url1);
+				
+					   $.ajax({
+					   type: 'GET',
+					   url: url,
+					
+					   data : {open_id:serviceid},
+					   success: function (data)
+						{            
+							$('.modal-body').html(data.html);	
+						},
+						beforeSend:function(){
+							$(".modal-body").html("<center><h2 class=text-muted><b>Loading...</b></h2></center>");
+						},
+						error: function(e) {
+						alert("An error occurred: " + e.responseText);
+						console.log(e);	
+						}
+					   });
+				}
+				if (event.url11)
+				{
+					$('#myModal-customer-modal').modal();
+					$('.modal-body').html("");
+					var servicesid = (event.s_id);
+					var url = (event.url11);
+					
+				   $.ajax({
+				   type: 'GET',
+				   url: url,
+				   data : {servicesid:servicesid},
+				   success: function (data)
+				   {      
+						  $('.modal-body').html(data.html);
+							
+					},
+					beforeSend:function(){
+									$(".modal-body").html("<center><h2 class=text-muted><b>Loading...</b></h2></center>");
+								},
+					error: function(e) {
+						alert("An error occurred: " + e.responseText);
+						console.log(e);	
+					}
+				   });
+				}
+			}
+      
+		});
+	});	
+	
+	</script>
+	
+ <!-- Monthly service in barchart-->
+ <script type="text/javascript">
+ google.load("visualization", "1", {packages:["corechart"]});
+ google.setOnLoadCallback(drawChart);
+ function drawChart() {
+ var data = google.visualization.arrayToDataTable([
+          ['Date', 'Service',{ role: 'style' },{ role: 'annotation' }],
+		  			 ['1',0,'',''],
+						 ['2',0,'',''],
+						 ['3',0,'',''],
+						 ['4',0,'',''],
+						 ['5',0,'',''],
+						 ['6',0,'',''],
+						 ['7',0,'',''],
+						 ['8',0,'',''],
+						 ['9',0,'',''],
+						 ['10',0,'',''],
+						 ['11',0,'',''],
+						 ['12',0,'',''],
+						 ['13',0,'',''],
+						 ['14',0,'',''],
+						 ['15',0,'',''],
+						 ['16',0,'',''],
+						 ['17',0,'',''],
+						 ['18',0,'',''],
+						 ['19',0,'',''],
+						 ['20',0,'',''],
+						 ['21',0,'',''],
+						 ['22',0,'',''],
+						 ['23',0,'',''],
+						 ['24',0,'',''],
+						 ['25',0,'',''],
+						 ['26',0,'',''],
+						 ['27',0,'',''],
+						 ['28',0,'',''],
+						 ['29',0,'',''],
+						 ['30',0,'',''],
+						 ['31',0,'',''],
+			 ]);
+ var options = {
+	legend:'none',
+	heigth:150,
+	chartArea:{left:40,'width':'90%',top:20,bottom:50,},
+	fontSize :10,
+	color:'#73879C',
+	hAxis: {
+			title: 'Dates',
+			titleTextStyle: {fontSize:12,color:'#4E5E6A',fontName: 'Roboto'},
+						
+			},
+    vAxis: {
+			title: ' Number Of Service',
+			titleTextStyle: {fontSize:12,color:'#4E5E6A',fontName: 'Roboto'},
+			
+			format:'decimal',
+			},
+ };
+ var chart = new google.visualization.ColumnChart(document.getElementById("barchart"));
+ chart.draw(data, options);
+ }
+ </script>
+ 
+ <!-- Ontime   donutchart-->
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Hours', 'No of service'],
+          ['24-Hours',0 ],
+		
+          ['48-Hours',0 ],
+          ['48-Hours After',0 ],
+       
+        ]);
+        var options = {
+			
+			fontSize:10,
+			fontName:'sans-serif',
+			height:150,
+		 chartArea:{left:1,right:2,bottom:30,top:30},
+		legend: { position: 'right', maxLines: 5,textStyle: {fontSize: 10,color:'#73879C',bold:true}},
+		isStacked: 'relative',
+		 vAxis: {
+            minValue: 0,
+            ticks: [0, .3, .6, .9, 1]
+          }	
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('donutchartontime'));
+        chart.draw(data, options);
+      }
+    </script>
+<!-- Vehicle  donutchart-->
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Vehicle', 'Number of service'],
+		          ]);
+
+        var options = {
+			is3D: true, 
+			fontSize:10,
+			fontName:'sans-serif',
+			height:150,
+			chartArea:{left:3,right:3,bottom:30,top:10},
+			legend: { position: 'right', maxLines: 5,textStyle: {fontSize: 10,color:'#73879C',bold:true}},
+			isStacked: 'relative',
+			vAxis: {
+					minValue: 0,
+					ticks: [0, .3, .6, .9, 1]
+					}	
+			};
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+
+<!-- Performance  donutchart-->
+<script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Employee', 'No of service'],
+                   ]);
+
+        var options = {
+			is3D: true, 
+			fontSize:10,
+			fontName:'sans-serif',
+			height:180,
+		 chartArea:{left:5,right:5,bottom:5,top:15},
+		legend: { position: 'right', maxLines: 15,textStyle: {fontSize: 12,padding:'5px',color:'#73879C',bold:true}},
+		isStacked: 'relative',
+		 vAxis: {
+            minValue: 0,
+            ticks: [0, .3, .6, .9, 1]
+          }	
+		};
+        var chart = new google.visualization.PieChart(document.getElementById('donutchartperformance'));
+        chart.draw(data, options);
+      }
+</script>
+
+<!--  Free service -->
+<!-- <script src="http://localhost/php_practicle/garage/public/js/Dashboard/Free_service.js" ></script> -->
+<script type="text/javascript">
+	$(document).ready(function(){
+   
+    	$(".openmodel").click(function(){ 
+	  
+	  		$('.modal-body').html("");
+	    	var open_id= $(this).attr("open_id");
+		
+			var url = $(this).attr('url');
+       		$.ajax({
+		       	type: 'GET',
+		       	url: url,
+			   	data : {open_id:open_id},
+		       	success: function (data)
+		       	{      
+			  		$('.modal-body').html(data.html);
+				},
+   				
+   				beforeSend:function(){
+					$(".modal-body").html("<center><h2 class=text-muted><b>Loading...</b></h2></center>");
+				},
+
+				error: function(e) {
+					alert("An error occurred: " + e.responseText);
+					console.log(e);	
+				}
+       		});
+       	});
+   	});
+</script>
+
+<!-- Paid service -->
+<!-- <script src="http://localhost/php_practicle/garage/public/js/Dashboard/Paid_service.js" ></script> -->
+<script type="text/javascript">
+	$(document).ready(function(){
+   
+    	$(".completedservice").click(function(){ 
+	  
+	  		$('.modal-body').html("");
+	   
+       		var c_service = $(this).attr("c_service");
+	    
+			var url = $(this).attr('url');
+	     
+       		$.ajax({
+       			type: 'GET',
+       			url: url,
+       			data : {open_id:c_service},
+       
+       			success: function (data)
+       			{   
+			  		$('.modal-body').html(data.html);
+				},
+   				
+   				beforeSend:function(){
+					$(".modal-body").html("<center><h2 class=text-muted><b>Loading...</b></h2></center>");
+				},
+
+				error: function(e) {
+       				alert("An error occurred: " + e.responseText);
+       				console.log(e);	
+				}
+       		});
+       	});
+   	});
+</script> 
+
+<!-- Repeat Job service  -->
+<!-- <script src="http://localhost/php_practicle/garage/public/js/Dashboard/Repeat_Job_service.js" ></script> -->
+<script type="text/javascript">
+	$(document).ready(function(){
+   
+    	$(".service-up").click(function(){ 
+	  
+	  		$('.modal-body').html("");
+	   
+       		var u_service = $(this).attr("u_service");
+	   
+			var url = $(this).attr('url');
+	     
+       		$.ajax({
+       			type: 'GET',
+       			url: url,
+       			data : {open_id:u_service},
+       
+       			success: function (data)
+       			{            
+			  		$('.modal-body').html(data.html);
+   				},
+   
+   				beforeSend:function(){
+					$(".modal-body").html("<center><h2 class=text-muted><b>Loading...</b></h2></center>");
+				},
+
+				error: function(e) {
+       				alert("An error occurred: " + e.responseText);
+       				console.log(e);	
+				}
+  			});
+       	});
+   	});
+</script>
+
+<!--  Free customer model service -->
+<!-- <script src="http://localhost/php_practicle/garage/public/js/Dashboard/Free_customer_model_service.js" ></script> -->
+<script type="text/javascript">
+	$(document).ready(function(){
+   
+    	$(".customeropenmodel").click(function(){ 
+	  
+	  		$('.modal-body').html("");
+	    	
+	    	var open_customer_id= $(this).attr("open_customer_id");
+			var url = $(this).attr('url');
+		
+       		$.ajax({
+       			type: 'GET',
+       			url: url,
+	   			data : {servicesid:open_customer_id},
+       			
+       			success: function (data)
+       			{      
+			  		$('.modal-body').html(data.html);
+				},
+   
+   				beforeSend:function(){
+					$(".modal-body").html("<center><h2 class=text-muted><b>Loading...</b></h2></center>");
+				},
+				
+				error: function(e) {
+					alert("An error occurred: " + e.responseText);
+					console.log(e);	
+				}
+       		});
+    	});
+	});
+</script>
+		 
+	   <footer>
+          <div>
+             <span class="footerbottom">All rights reserved by Garage System.</span>
+          </div>
+         
+        </footer>
+   </div>
+	
+  </div>
+ <!-- jQuery -->
+    
+    <script src="http://localhost/php_practicle/garage/vendors/jquery/dist/jquery.min.js"></script>
+	<script src="http://localhost/php_practicle/garage/build/js/jquery-ui.js" defer="defer"></script>
+    <!-- Bootstrap -->
+    <script src="http://localhost/php_practicle/garage/vendors/bootstrap/dist/js/bootstrap.min.js" defer="defer"></script>
+    <!-- FastClick -->
+    <script src="http://localhost/php_practicle/garage/vendors/fastclick/lib/fastclick.js" defer="defer"></script>
+    <!-- NProgress -->
+    <script src="http://localhost/php_practicle/garage/vendors/nprogress/nprogress.js" defer="defer"></script>
+    <!-- Chart.js -->
+    <script src="http://localhost/php_practicle/garage/vendors/Chart.js/dist/Chart.min.js" defer="defer"></script>
+    <!-- jQuery Sparklines -->
+    <script src="http://localhost/php_practicle/garage/vendors/jquery-sparkline/dist/jquery.sparkline.min.js" defer="defer"></script>
+    <!-- Flot -->
+    <script src="http://localhost/php_practicle/garage/vendors/Flot/jquery.flot.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/Flot/jquery.flot.pie.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/Flot/jquery.flot.time.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/Flot/jquery.flot.stack.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/Flot/jquery.flot.resize.js" defer="defer"></script>
+    <!-- Flot plugins -->
+    <script src="http://localhost/php_practicle/garage/vendors/flot.orderbars/js/jquery.flot.orderBars.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/flot-spline/js/jquery.flot.spline.min.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/flot.curvedlines/curvedLines.js" defer="defer"></script>
+    <!-- DateJS -->
+    <script src="http://localhost/php_practicle/garage/vendors/DateJS/build/date.js" defer="defer"></script>
+    <!-- FullCalendar -->
+    <script src="http://localhost/php_practicle/garage/vendors/moment/min/moment.min.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/fullcalendar/dist/fullcalendar.min.js" defer="defer"></script>
+    
+    <!-- Custom Theme Scripts -->
+    <script src="http://localhost/php_practicle/garage/build/js/custom.min.js" defer="defer"></script>
+	<script src="http://localhost/php_practicle/garage/vendors/sweetalert/sweetalert.min.js" defer="defer"></script>
+	
+	<script src="http://localhost/php_practicle/garage/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+	
+    <script src="http://localhost/php_practicle/garage/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/datatables.net-buttons/js/dataTables.buttons.min.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/datatables.net-buttons/js/buttons.flash.min.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/datatables.net-buttons/js/buttons.html5.min.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/datatables.net-buttons/js/buttons.print.min.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/datatables.net-responsive/js/dataTables.responsive.min.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/datatables.net-scroller/js/dataTables.scroller.min.js" defer="defer"></script>
+	<!-- dropify scripts-->
+	<script src="http://localhost/php_practicle/garage/vendors/dropify/dist/js/dropify.min.js" defer="defer"></script>
+	<script src="http://localhost/php_practicle/garage/vendors/iCheck/icheck.min.js" defer="defer"></script>
+	<!-- slider scripts-->
+	
+	<script src="http://localhost/php_practicle/garage/vendors/slider/jssor.slider.mini.js" defer="defer"></script>
+	<!-- bootstrap-daterangepicker -->
+	<script src="http://localhost/php_practicle/garage/vendors/moment/min/moment.min.js" defer="defer"></script>
+	<script src="http://localhost/php_practicle/garage/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js" defer="defer"></script>
+    <script src="http://localhost/php_practicle/garage/vendors/bootstrap-daterangepicker/daterangepicker.js" defer="defer"></script>
+    
+	
+	 <!-- Filter  -->
+	
+    <script src="http://localhost/php_practicle/garage/build/js/jszip.min.js" defer="defer"></script>
+    
+	 <!-- Autocomplete Js  -->
+	<script src="http://localhost/php_practicle/garage/build/js/jquery.circliful.min.js" defer="defer"></script>
+	
+	<!-- Multiselect Js  -->
+	<script src="http://localhost/php_practicle/garage/build/js/bootstrap-multiselect.js" defer="defer"></script>
+
+	<script src="http://localhost/php_practicle/garage/build/dist/js/select2.min.js" type='text/javascript' defer="defer"></script>
+	
+	<!-- For form field validate Using Proengsoft -->
+	<script type="text/javascript" src="http://localhost/php_practicle/garage/build/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('form').bind("keypress", function(e) {
+			  if (e.keyCode == 13) {               
+				e.preventDefault();
+				return false;
+			  }
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+	    var csrf_token = document.querySelector("meta[name='csrf-token']").getAttribute("content");
+	    function csrfSafeMethod(method) {
+	        // these HTTP methods do not require CSRF protection
+	        return (/^(GET|HEAD|OPTIONS)$/.test(method));
+	    }
+	    var o = XMLHttpRequest.prototype.open;
+	    XMLHttpRequest.prototype.open = function(){
+	        var res = o.apply(this, arguments);
+	        var err = new Error();
+	        if (!csrfSafeMethod(arguments[0])) {
+	            this.setRequestHeader('anti-csrf-token', csrf_token);
+	        }
+	        return res;
+	    };
+ 	</script>
+</body>
+</html>
